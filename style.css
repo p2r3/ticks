@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+body {
+  background-color: #261731;
+  margin: 0 10%;
+}
+body * {
+  text-align: center;
+  color: #dc8add;
+  font-family: "Quicksand";
+}
+
+/* Remove arrows from number input */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.clock-container {
+  position: relative;
+  float: left;
+  width: 40vw;
+  text-align: center;
+  margin-top: 35vh;
+}
+
+.clock {
+  display: inline-block;
+  background-color: #3b2c45;
+  border-radius: 15px;
+  padding: 10px 20px;
+  /* Remove whitespace between units */
+  font-size: 0;
+}
+.clock * {
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 2rem;
+  max-width: 4rem;
+  background: none;
+  outline: none;
+  border: none;
+}
+
+#ticks {
+  max-width: 8rem;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Ticks Calculator</title>
+  </head>
+  <body>
+
+    <div class="clock-container">
+      <h1>Time</h1>
+      <div class="clock" id="clock-time">
+        <input type="number" id="hours" placeholder="0" autofocus></input><span>:</span>
+        <input type="number" id="minutes" placeholder="0"></input><span>:</span>
+        <input type="number" id="seconds" placeholder="00"></input><span>.</span>
+        <input type="number" id="milliseconds" placeholder="000"></input>
+      </div>
+    </div>
+
+    <div class="clock-container">
+      <h1>Ticks</h1>
+      <div class="clock" id="clock-ticks">
+        <span>TPS:</span><input type="number" id="tickrate" placeholder="60"></input>
+        <span>&nbsp;</span>
+        <span>Ticks:</span><input type="number" id="ticks" placeholder="0000"></input>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+
+  </body>
+</html>
