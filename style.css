@@ -20,6 +20,11 @@ input[type=number] {
   -moz-appearance: textfield;
   appearance: textfield;
 }
+/* Fix input text colors for iOS Safari  */
+input::placeholder {
+  -webkit-text-fill-color: #dc8add;
+  opacity: 0.65;
+}
 
 .clock-container {
   position: relative;
@@ -54,18 +59,17 @@ input[type=number] {
 
 @media only screen and (max-width: 1024px) {
   body {
-    margin-top: 10%;
+    margin: 10% 7.5%;
   }
   .clock-container {
-    float: top;
     width: 100%;
-    margin-top: 10vh;
+    margin-top: 5vh;
   }
 }
 
 @media only screen and (max-width: 600px) {
   .clock * {
-    font-size: 1.5rem;
-    max-width: 3rem;
+    font-size: 1.2rem;
+    max-width: 2.4rem;
   }
 }
