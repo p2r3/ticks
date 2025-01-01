@@ -53,8 +53,8 @@ function updateTimeClock () {
 }
 
 function sanitizeInput (event) {
-  const charCode = event.which ? event.which : event.keyCode
-  return !(charCode > 31 && (charCode < 48 || charCode > 57))
+  const charCode = event.which || event.keyCode;
+  return !(charCode > 31 && (charCode < 48 || charCode > 57));
 }
 
 for (const curr in elemTime) {
