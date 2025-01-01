@@ -42,6 +42,7 @@ input[type=number] {
   font-weight: bold;
   font-size: 2rem;
   max-width: 4rem;
+  white-space: nowrap;
   background: none;
   outline: none;
   border: none;
@@ -49,4 +50,22 @@ input[type=number] {
 
 #ticks {
   max-width: 8rem;
+}
+
+@media only screen and (max-width: 1024px) {
+  body {
+    margin-top: 10%;
+  }
+  .clock-container {
+    float: top;
+    width: 100%;
+    margin-top: 10vh;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .clock * {
+    font-size: 1.5rem;
+    max-width: 3rem;
+  }
 }
