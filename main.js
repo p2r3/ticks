@@ -37,7 +37,7 @@ function updateTickClock () {
   let seconds = values.hr * 60 * 60 + values.min * 60 + values.sec;
   let ticks = seconds * values.tps + Math.round(values.ms * (values.tps / 1000));
   // Write output to UI
-  elemTicks.ticks.value = ticks;
+  elemTicks.ticks.value = ticks || "";
 }
 
 function updateTimeClock () {
@@ -46,10 +46,10 @@ function updateTimeClock () {
   // Calculate seconds from ticks
   let seconds = values.ticks / values.tps;
   // Write output to UI
-  elemTime.hours.value = Math.floor(seconds / 3600);
-  elemTime.minutes.value = Math.floor(seconds % 3600 / 60);
-  elemTime.seconds.value = Math.floor(seconds % 3600 % 60);
-  elemTime.milliseconds.value = Math.round(seconds % 3600 % 60 * 1000 % 1000);
+  elemTime.hours.value = Math.floor(seconds / 3600) || "";
+  elemTime.minutes.value = Math.floor(seconds % 3600 / 60) || "";
+  elemTime.seconds.value = Math.floor(seconds % 3600 % 60) || "";
+  elemTime.milliseconds.value = Math.round(seconds % 3600 % 60 * 1000 % 1000) || "";
 }
 
 function sanitizeInput (event) {
