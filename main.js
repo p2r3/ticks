@@ -24,8 +24,7 @@ const values = {
 function updateValues () {
   values.hr = parseInt(elemTime.hours.value) || 0;
   values.min = parseInt(elemTime.minutes.value) || 0;
-  values.sec = parseInt(elemTime.seconds.value) || 0;
-  values.ms = parseInt(elemTime.milliseconds.value) || 0;
+  values.sec = parseFloat(`${elemTime.seconds.value}.${elemTime.milliseconds.value}`) || 0;
   values.tps = parseInt(elemTicks.tickrate.value) || 60;
   values.ticks = parseInt(elemTicks.ticks.value) || 0;
 }
@@ -35,7 +34,7 @@ function updateTickClock () {
   updateValues();
   // Calculate ticks from real time
   let seconds = values.hr * 60 * 60 + values.min * 60 + values.sec;
-  let ticks = seconds * values.tps + Math.round(values.ms * (values.tps / 1000));
+  let ticks = Math.round(seconds * values.tps);
   // Write output to UI
   elemTicks.ticks.value = ticks || "";
 }
