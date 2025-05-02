@@ -48,7 +48,9 @@ function updateTimeClock () {
   elemTime.hours.value = Math.floor(seconds / 3600) || "";
   elemTime.minutes.value = Math.floor(seconds % 3600 / 60) || "";
   elemTime.seconds.value = Math.floor(seconds % 3600 % 60) || "";
-  elemTime.milliseconds.value = Math.round(seconds % 3600 % 60 * 1000 % 1000) || "";
+  let milliseconds = Math.round(seconds % 3600 % 60 * 1000 % 1000) || "";
+  while (milliseconds.length < 3) milliseconds = "0" + milliseconds;
+  elemTime.milliseconds.value = milliseconds;
 }
 
 function sanitizeInput (event) {
